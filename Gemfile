@@ -11,6 +11,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'thin'
 end
 
 gem "tj_rails_extension", :git => "git://github.com/tonytonyjan/tj_rails_extension.git"
