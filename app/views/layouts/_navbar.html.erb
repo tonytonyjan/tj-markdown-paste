@@ -1,6 +1,6 @@
 <ul class="nav nav-pills pull-right">
   <%= nav_li t("navbar.home"), root_url %>
-  <%= nav_li t("navbar.new_paste"), new_post_path %>
+  <%= nav_li t("helpers.submit.create", :model => Post), new_post_path %>
   <%= nav_li t("navbar.about"), home_about_path %>
   <%= nav_li t("navbar.contact"), home_contact_path %>
 </ul>

@@ -4,6 +4,7 @@
 
 SITE.home = 
   index: () ->
+    $('#post_content').val('')
     this.highlight()
     this.preview()
     this.demo()

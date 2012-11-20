@@ -27,21 +27,11 @@
 
   <body class="<%= controller_name %> <%= action_name %>" data-controller="<%= controller_name %>" data-action="<%= action_name %>">
     <div class="container-narrow">
-      <div class="masthead">
-        <%= render partial: 'layouts/navbar' %>
-        <h3 class="muted"><%= t("site_name") %></h3>
-      </div>
-
-      <%= notice_message %>
-
-      <hr>
-
       <%= yield %>
-
       <hr>
-
+      <%= render "share/disqus" %>
       <div class="footer">
-        <p>&copy; <%= link_to "tonytonyjan", "http://tonytonyjan.github.com", target: "_blank" %> 2012</p>
+        <p>Powered by <%= link_to t("site_name"), root_url %></p>
       </div>
     </div> <!-- /container -->
   </body>

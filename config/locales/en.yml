@@ -2,17 +2,17 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  site_name: TJMarkdownPaste
+  site_name: TJMarkdownPaste (Beta)
   preview: Preview
   navbar:
     home: Home
     about: About
     contact: Contact
-    new_paste: New Paste
+    feedback: Feedback
   home:
     index:
       header: Super Awesome Markdown Paste!
-      lead: Support Tex formula syntax and auto code highlight.
+      lead: Markdown with mathematic syntax and automatic code highlight.
       try_it: Try It Right Now
       features:
         code_hightlight:
@@ -28,3 +28,6 @@ en:
             so that you can easily express your formulas, etc.
           p_old: >
             TJMarkdownPaste use <a href="http://www.mathjax.org/">MathJax</a> to automatically render all Tex formula syntax.
+    about:
+      blog: Blog
+      email: Email

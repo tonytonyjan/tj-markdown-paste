@@ -1,2 +1,16 @@
-<h1>Home#contact</h1>
-<p>Find me in app/views/home/contact.html.erb</p>
+<div class="row-fluid">
+  <div class="span3">
+    <%= image_tag "http://sphotos-c.ak.fbcdn.net/hphotos-ak-ash4/430601_10151165219257620_1558995400_n.jpg", class: "img-rounded" %>
+  </div>
+  <div class="span9">
+    <dl>
+      <dt><%= t(".blog") %></dt>
+      <dd><%= link_to "不歸路", "http://tonytonyjan.github.com", target: "_blank" %></dd>
+      <dt><%= t(".email") %></dt>
+      <dd>tonytonyjan(at)gmail(dot)com</dd>
+    </dl>
+  </div>
+</div>
+
+<h2><%= t("navbar.feedback") %></h2>
+<%= render "share/disqus" %>
