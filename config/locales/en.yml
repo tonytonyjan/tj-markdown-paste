@@ -4,7 +4,11 @@
 en:
   site_name: TJMarkdownPaste
   preview: Preview
-
+  navbar:
+    home: Home
+    about: About
+    contact: Contact
+    new_paste: New Paste
   home:
     index:
       header: Super Awesome Markdown Paste!
