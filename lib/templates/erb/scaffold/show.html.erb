@@ -1,0 +1,10 @@
+<% attributes.each do |attribute| -%>
+<p>
+  <strong><%= attribute.human_name %>:</strong>
+  <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
+</p>
+
+<% end -%>
+
+<%%= link_to t('tj.form.edit'), edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) %> |
+<%%= link_to t('tj.form.back'), <%= index_helper %>_path %>

@@ -1,0 +1,37 @@
+<%= render 'posts/mathjax' %>
+<div class="jumbotron">
+  <h1><%= t(".header") %></h1>
+  <p class="lead"><%= t(".lead") %></p>
+  <%= link_to t(".try_it"), new_post_path, class: "btn btn-large btn-success" %>
+</div>
+
+<div class="row-fluid">
+  <div class="span6"><%= text_area_tag "post_content", nil, id: "post_content", class: "span12", rows: 25 %></div>
+  <div class="span6"><div id="preview"></div></div>
+</div>
+
+<hr>
+
+<div class="row-fluid marketing">
+  <div class="span6">
+    <h4><%= t(".features.code_hightlight.h") %></h4>
+    <p><%= t(".features.code_hightlight.p").html_safe %></p>
+    
+    <h4><%= t(".features.mathematic_syntax.h") %></h4>
+    <p><%= t(".features.mathematic_syntax.p").html_safe %></p>
+
+    <h4>Subheading</h4>
+    <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+  </div>
+
+  <div class="span6">
+    <h4>Subheading</h4>
+    <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+    <h4>Subheading</h4>
+    <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+    <h4>Subheading</h4>
+    <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+  </div>
+</div>

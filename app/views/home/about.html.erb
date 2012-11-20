@@ -1,0 +1,25 @@
+<%= render 'posts/mathjax' %>
+<% content = capture do %>
+# TJMarkdownPaste
+
+It's really common to see an online markdown editor, but most of them don't have features for publishing or sharing. However, it's still common to just add only a publish feature.
+
+It's cool to have automatic code hightlight, isn't it?
+
+    #include<stdio.h>
+    int main(int argc, char* argv[]){
+      printf("Hello, TJMarkdownPaste");
+      return 0;
+    }
+
+Ruby code:
+
+    def ruby_code
+      cool_boy = name: "tonytonyjan", age: 18
+    end
+
+And what about some mathematic syntax?
+
+$J\_\alpha(x) = \sum\limits\_{m=0}^\infty \frac{(-1)^m}{m! \, \Gamma(m + \alpha + 1)}{\left({\frac{x}{2}}\right)}^{2 m + \alpha}$
+<% end %>
+<%= RDiscount.new(content, :strict).to_html.html_safe %>

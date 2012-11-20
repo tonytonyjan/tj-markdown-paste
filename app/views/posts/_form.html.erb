@@ -1,0 +1,25 @@
+<%= render 'mathjax' %>
+
+<div class="row-fluid">
+  <div class="span6">
+    <%= simple_form_for(@post) do |f| %>
+      <%= error_message f.object %>
+      <div class="form-inputs">
+        <%= f.input :title %>
+        <%= f.input :content, input_html: {class: 'span12'} %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, class: "btn btn-primary btn-large" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="span6">
+    <div class="page-header">
+      <h2>
+        <%= t("preview") %>
+      </h2>
+    </div>
+    <div id="preview"></div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<%= link_to t("helpers.submit.create", :model => Post), new_post_path, class: "btn btn-success btn-large" %>
+<%= will_paginate @posts %>
+<table>
+  <thead>
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= content_tag_for(:tr, @posts) do |post| %>
+        <td><%= post.title %></td>
+        <td><%= post.content %></td>
+        <td><%= link_to t('tj.form.show'), post %></td>
+      <td><%= link_to t('tj.form.edit'), edit_post_path(post) %></td>
+      <td><%= link_to t('tj.form.destroy'), post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @posts %>
+<br />

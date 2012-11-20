@@ -1,0 +1,26 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  site_name: TJMarkdownPaste
+  preview: Preview
+
+  home:
+    index:
+      header: Super Awesome Markdown Paste!
+      lead: Support Tex formula syntax and auto code highlight.
+      try_it: Try It Right Now
+      features:
+        code_hightlight:
+          h: Automatic Code Highlight
+          p: >
+            TJMarkdown can automatically highlights your codes in <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tag.
+          p_old: >
+            TJMarkdownPaste use <a href="http://softwaremaniacs.org/soft/highlight/en/">highlight.js</a> to automatically highlights your codes.
+        mathematic_syntax:
+          h: Mathematic Syntax
+          p: >
+            TJMarkdownPaste provides Tex mathematic syntax
+            so that you can easily express your formulas, etc.
+          p_old: >
+            TJMarkdownPaste use <a href="http://www.mathjax.org/">MathJax</a> to automatically render all Tex formula syntax.
