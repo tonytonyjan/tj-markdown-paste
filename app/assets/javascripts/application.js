@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require vendor.js
+//= require vendor
 //= require_tree .
 $(document).ready(UTIL.init);

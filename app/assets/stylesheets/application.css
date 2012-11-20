@@ -11,6 +11,7 @@
  *= require bootstrap
  *= require_self
  *= require bootstrap-responsive
+ *= require highlight/tomorrow-night
  *= require_tree .
  */
 
