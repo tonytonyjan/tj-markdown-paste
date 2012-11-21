@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title><%= t("site_name") %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<%= @meta[:description] || t("home.index.lead") %>">
-    <meta name="author" content="<%= @meta[:author] %>">
+    <meta name="description" content="<%= @meta && @meta[:description] || t("home.index.lead") %>">
+    <meta name="author" content="<%= @meta && @meta[:author] %>">
 
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
@@ -30,5 +30,7 @@
       <%= notice_message %>
       <%= yield %>
     </div> <!-- /container -->
+    <%= render partial: 'layouts/google_plus_api' %>
+    <%= render partial: 'layouts/facebook_api' %>
   </body>
 </html>
