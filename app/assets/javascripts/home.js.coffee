@@ -7,6 +7,7 @@ SITE.home =
     $('#post_content').val('')
     this.highlight()
     this.preview()
+    # this.ace()
     this.demo()
   about: () ->
     hljs.initHighlightingOnLoad()
@@ -46,4 +47,16 @@ Ruby code:
 
 $J\_\\alpha(x) = \\sum\\limits\_{m=0}^\\infty \\frac{(-1)^m}{m! \\, \\Gamma(m + \\alpha + 1)}{\\left({\\frac{x}{2}}\\right)}^{2 m + \\alpha}$
     """
-    $('#post_content').focus().autotype(content, {delay: 10})
+    $('#post_content').autotype(content, {delay: 5})
+  ace: () ->
+    editor = ace.edit("editor")
+    editor.setTheme("ace/theme/clouds_midnight")
+    editor.renderer.setShowGutter(false)
+    editor.getSession().setMode("ace/mode/markdown")
+    source = $('#post_content')
+    editor.on("change", () ->
+      source.val(editor.getValue()).trigger("keyup")
+    )
+    # source.bind('keydown', () ->
+    #   editor.setValue(source.val())
+    # )

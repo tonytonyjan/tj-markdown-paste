@@ -27,6 +27,7 @@
 
   <body class="<%= controller_name %> <%= action_name %>" data-controller="<%= controller_name %>" data-action="<%= action_name %>">
     <div class="container-narrow">
+      <%= notice_message %>
       <%= yield %>
     </div> <!-- /container -->
   </body>

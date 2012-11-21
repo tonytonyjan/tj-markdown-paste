@@ -1,25 +1,49 @@
 <%= render 'posts/mathjax' %>
 <% content = capture do %>
-# TJMarkdownPaste
+# <%= t("site_name") %>
 
-It's really common to see an online markdown editor, but most of them don't have features for publishing or sharing. However, it's still common to just add only a publish feature.
+**<%= t("site_name") %> is an anonymous HTML5 Markdown publishing service with automatic code syntax highlight and Tex mathematic syntex supported.**
 
-It's cool to have automatic code hightlight, isn't it?
+## What is Markdown?
 
-    #include<stdio.h>
-    int main(int argc, char* argv[]){
-      printf("Hello, TJMarkdownPaste");
-      return 0;
-    }
+[Markdown] is a lightweight markup language based on the formatting conventions that people naturally use in email.  As [John Gruber] writes on the [Markdown site][markdown]:
 
-Ruby code:
+> The overriding design goal for Markdown's
+> formatting syntax is to make it as readable 
+> as possible. The idea is that a
+> Markdown-formatted document should be
+> publishable as-is, as plain text, without
+> looking like it's been marked up with tags
+> or formatting instructions.
 
-    def ruby_code
-      cool_boy = name: "tonytonyjan", age: 18
-    end
+## What is Tex
 
-And what about some mathematic syntax?
+[TeX] is a typesetting system designed and mostly written by [Donald Knuth],
+and also is a popular means by which to typeset complex mathematical formula.
 
-$J\_\alpha(x) = \sum\limits\_{m=0}^\infty \frac{(-1)^m}{m! \, \Gamma(m + \alpha + 1)}{\left({\frac{x}{2}}\right)}^{2 m + \alpha}$
+## Version
+
+0.5
+
+## Tech
+
+<%= t("site_name") %> uses a number of open source projects to work properly:
+
+* [Ace Editor] - awesome web-based text editor
+* [Pagedown] - the version of Attacklab's [Showdown] and [WMD] as used on Stack Overflow and the other Stack Exchange sites.
+* [Twitter Bootstrap] - great UI boilerplate for modern web apps
+* [jQuery] - everybody knows that.
+
+[john gruber]: http://daringfireball.net/
+[markdown]: http://daringfireball.net/projects/markdown/
+[pagedown]: http://code.google.com/p/pagedown/
+[showdown]: https://github.com/coreyti/showdown
+[wmd]: http://code.google.com/p/wmd/
+[ace editor]: http://ace.ajax.org
+[Twitter Bootstrap]: http://twitter.github.com/bootstrap/
+[jQuery]: http://jquery.com
+[tex]: http://en.wikipedia.org/wiki/TeX
+[donald knuth]: http://en.wikipedia.org/wiki/Donald_Knuth
+
 <% end %>
 <%= RDiscount.new(content, :strict).to_html.html_safe %>

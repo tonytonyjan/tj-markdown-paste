@@ -26,7 +26,7 @@ class Ability
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
     user ||= User.new # guest user (not logged in)
-    can :read, :all
+    can [:read, :create], Post
     # if user.admin?
     #   can :manage, :all
     # else

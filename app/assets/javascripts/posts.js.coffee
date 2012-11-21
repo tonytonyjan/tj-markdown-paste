@@ -8,10 +8,12 @@ SITE.posts =
   new: () ->
     this.highlight()
     this.preview()
+    this.ace()
     # demo()
   edit: () ->
     this.preview()
     this.updatePreview()
+    this.ace()
   updatePreview: () ->
     source = $('#post_content')
     preview = $('#preview')
@@ -24,3 +26,11 @@ SITE.posts =
     hljs.initHighlightingOnLoad()
   preview: () ->
     $('#post_content').bind('keyup', this.updatePreview);
+  ace: () ->
+    editor = ace.edit("editor")
+    editor.setTheme("ace/theme/clouds_midnight")
+    editor.renderer.setShowGutter(false)
+    editor.getSession().setMode("ace/mode/markdown")
+    editor.on("change", () ->
+      $('#post_content').val(editor.getValue()).trigger("keyup")
+    )

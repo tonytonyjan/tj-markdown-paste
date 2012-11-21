@@ -1,5 +1,4 @@
 <%= render 'mathjax' %>
-
 <% if @post.show_title %>
   <h1><%= @post.title %></h1>
 <% end %>
@@ -7,5 +6,10 @@
 <hr>
 <%= render "share/disqus" %>
 <div class="footer">
-  <p>Powered by <%= link_to t("site_name"), root_url %> | <%= link_to t('tj.form.edit'), edit_post_path(@post) %></p>
+  <p>
+    Powered by <%= link_to t("site_name"), root_url %> |
+    <% if can? :update, @post %>
+      <%= link_to t('tj.form.edit'), edit_post_path(@post) %>
+    <% end %>
+  </p>
 </div>

@@ -1,4 +1,5 @@
 <%= render 'posts/mathjax' %>
+<%= render 'posts/ace' %>
 <div class="jumbotron">
   <h1><%= t(".header") %></h1>
   <p class="lead"><%= t(".lead") %></p>
@@ -6,7 +7,9 @@
 </div>
 
 <div class="row-fluid">
-  <div class="span6"><%= text_area_tag "post_content", nil, id: "post_content", class: "span12", rows: 25 %></div>
+  <div class="span6">
+    <div id="editor"></div>
+    <%= text_area_tag "post_content", nil, id: "post_content", class: "span12", rows: 25 %></div>
   <div class="span6"><div id="preview"></div></div>
 </div>
 
