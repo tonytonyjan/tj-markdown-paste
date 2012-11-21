@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+  <head itemscope itemtype="http://schema.org/Article">
     <meta charset="utf-8">
-    <title><%= t("site_name") %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<%= @meta && @meta[:description] || t("home.index.lead") %>">
-    <meta name="author" content="<%= @meta && @meta[:author] %>">
+
+    <%= render partial: 'layouts/title_and_metas' %>
 
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
