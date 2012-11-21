@@ -4,4 +4,9 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to request.referer || root_url, :alert => exception.message
   end
+
+  def current_user
+    nil
+  end
+  helper_method :current_user
 end
