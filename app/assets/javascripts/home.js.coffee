@@ -45,7 +45,7 @@ Ruby code:
 
 **And what about some mathematic syntax?**
 
-$J\_\\alpha(x) = \\sum\\limits\_{m=0}^\\infty \\frac{(-1)^m}{m! \\, \\Gamma(m + \\alpha + 1)}{\\left({\\frac{x}{2}}\\right)}^{2 m + \\alpha}$
+$J\\_\\alpha(x) = \\sum\\limits\\_{m=0}^\\infty \\frac{(-1)^m}{m! \\, \\Gamma(m + \\alpha + 1)}{\\left({\\frac{x}{2}}\\right)}^{2 m + \\alpha}$
     """
     $('#post_content').autotype(content, {delay: 5})
   ace: () ->
