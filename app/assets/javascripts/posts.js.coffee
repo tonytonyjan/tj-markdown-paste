@@ -9,11 +9,13 @@ SITE.posts =
     this.highlight()
     this.preview()
     this.ace()
+    this.show_title()
     # demo()
   edit: () ->
     this.preview()
     this.updatePreview()
     this.ace()
+    this.show_title()
   updatePreview: () ->
     source = $('#post_content')
     preview = $('#preview')
@@ -34,3 +36,16 @@ SITE.posts =
     editor.on("change", () ->
       $('#post_content').val(editor.getValue()).trigger("keyup")
     )
+  show_title: () ->
+    title = $('#post_title')
+    title_preview = $('#post_title_preview')    
+    show_title = $('#post_show_title')
+    update_title = () ->
+      if show_title.attr("checked")
+        title_preview.text(title.val())
+        title_preview.css(display: "inherit")
+      else
+        title_preview.css(display: "none")
+    update_title()
+    show_title.change update_title
+    title.bind("keyup", update_title)
