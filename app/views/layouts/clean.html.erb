@@ -28,11 +28,6 @@
   <body class="<%= controller_name %> <%= action_name %>" data-controller="<%= controller_name %>" data-action="<%= action_name %>">
     <div class="container-narrow">
       <%= yield %>
-      <hr>
-      <%= render "share/disqus" %>
-      <div class="footer">
-        <p>Powered by <%= link_to t("site_name"), root_url %></p>
-      </div>
     </div> <!-- /container -->
   </body>
 </html>

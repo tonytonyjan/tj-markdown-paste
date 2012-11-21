@@ -4,3 +4,8 @@
   <h1><%= @post.title %></h1>
 <% end %>
 <%= @post.markup_content %>
+<hr>
+<%= render "share/disqus" %>
+<div class="footer">
+  <p>Powered by <%= link_to t("site_name"), root_url %> | <%= link_to t('tj.form.edit'), edit_post_path(@post) %></p>
+</div>
