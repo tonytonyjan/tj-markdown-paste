@@ -5,9 +5,9 @@
     <%= simple_form_for(@post) do |f| %>
       <%= error_message f.object %>
       <div class="form-inputs">
-        <%= f.input :title %>
+        <%= f.input :title, label: false, placeholder: "Title" %>
         <%= f.input :show_title %>
-        <%= f.input :content, input_html: {class: 'span12'} %>
+        <%= f.input :content, label: false, input_html: {class: 'span12'} %>
       </div>
 
       <div class="form-actions">
@@ -16,11 +16,6 @@
     <% end %>
   </div>
   <div class="span6">
-    <div class="page-header">
-      <h2>
-        <%= t("preview") %>
-      </h2>
-    </div>
     <h1 id="post_title_preview"></h1>
     <div id="preview"></div>
   </div>

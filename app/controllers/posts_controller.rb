@@ -6,4 +6,8 @@ class PostsController < ApplicationController
     @meta = {description: @post.content}
     render layout: "clean"
   end
+
+  def new
+    render layout: "editor"
+  end
 end
