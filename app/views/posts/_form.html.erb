@@ -1,22 +1,26 @@
 <%= render 'mathjax' %>
-<%= render "ace" %>
-<div class="row-fluid">
-  <div class="span6">
-    <%= simple_form_for(@post) do |f| %>
-      <%= error_message f.object %>
+
+<%= simple_form_for(@post) do |f| %>
+  <%= error_message f.object %>
+    <div class="masthead">
       <div class="form-inputs">
         <%= f.input :title, label: false, placeholder: "Title" %>
-        <%= f.input :show_title %>
-        <%= f.input :content, label: false, input_html: {class: 'span12'} %>
+        <%= f.input :show_title, label: false, inline_label: true %>
       </div>
-
-      <div class="form-actions">
-        <%= f.button :submit, class: "btn btn-primary btn-large" %>
+    </div>
+    <hr>
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="form-inputs">
+          <%= f.input :content, label: false, input_html: {class: 'span12'} %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, class: "btn btn-primary btn-large" %>
+        </div>
       </div>
-    <% end %>
-  </div>
-  <div class="span6">
-    <h1 id="post_title_preview"></h1>
-    <div id="preview"></div>
-  </div>
-</div>
+      <div class="span6">
+        <h1 id="post_title_preview"></h1>
+        <div id="preview"></div>
+      </div>
+    </div>
+<% end %>

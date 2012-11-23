@@ -1,14 +1,11 @@
 <% content_for :container do %>
   <div class="container-fluid">
-    <div class="masthead">
-      <%= render partial: 'layouts/navbar' %>
-      <h3 class="muted"><%= t("site_name") %></h3>
-    </div>
-    <hr>
     <%= notice_message %>
     <%= yield %>
     <hr>
-    <%= render partial: 'layouts/footer' %>
+    <div class="footer">
+      <p>Powered by <%= link_to t("site_name"), root_url %></p>
+    </div>
   </div> <!-- /container -->
 <% end %>
 
