@@ -6,35 +6,33 @@ SITE.posts =
   show: () ->
     this.highlight()
   new: () ->
-    this.highlight()
-    this.preview()
-    this.ace()
-    this.show_title()
-    # demo()
+    this.form()
+  create: () ->
+    this.form()
   edit: () ->
-    this.preview()
-    this.updatePreview()
-    this.ace()
+    this.form()
+  update: () ->
+    this.form()
+  form: () ->
+    this.highlight()
+    this.codemirror()
     this.show_title()
-  updatePreview: () ->
-    source = $('#post_content')
-    preview = $('#preview')
-    converter = new Markdown.Converter()
-    preview.html(converter.makeHtml(source.val()))
-    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
-    preview.find('pre code').each (i, e) ->
-      hljs.highlightBlock(e)
   highlight: () ->
     hljs.initHighlightingOnLoad()
-  preview: () ->
-    $('#post_content').bind('keyup', this.updatePreview);
-  ace: () ->
-    editor = ace.edit("editor")
-    editor.setTheme("ace/theme/clouds_midnight")
-    editor.renderer.setShowGutter(false)
-    editor.getSession().setMode("ace/mode/markdown")
-    editor.on("change", () ->
-      $('#post_content').val(editor.getValue()).trigger("keyup")
+  codemirror: () ->
+    textArea = document.getElementById("post_content")
+    preview = $('#preview')
+    converter = new Markdown.Converter()
+    editor = CodeMirror.fromTextArea(textArea,
+      mode: "markdown",
+      theme: "vibrant-ink",
+      lineWrapping: true,
+      onChange: () ->
+        preview.html(converter.makeHtml(editor.getValue()))
+        #MathJax.Hub.Queue(["Typeset",MathJax.Hub])
+        MathJax.Hub.Typeset()
+        preview.find('pre code').each (i, e) ->
+          hljs.highlightBlock(e)
     )
   show_title: () ->
     title = $('#post_title')
