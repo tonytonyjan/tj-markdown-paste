@@ -29,8 +29,7 @@ SITE.posts =
       lineWrapping: true,
       onChange: () ->
         preview.html(converter.makeHtml(editor.getValue()))
-        #MathJax.Hub.Queue(["Typeset",MathJax.Hub])
-        MathJax.Hub.Typeset()
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub])
         preview.find('pre code').each (i, e) ->
           hljs.highlightBlock(e)
     )
