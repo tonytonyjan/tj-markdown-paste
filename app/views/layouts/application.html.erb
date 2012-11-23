@@ -24,24 +24,29 @@
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>" data-controller="<%= controller_name %>" data-action="<%= action_name %>">
-    <div class="container-narrow">
-      <div class="masthead">
-        <%= render partial: 'layouts/navbar' %>
-        <h3 class="muted"><%= t("site_name") %></h3>
-      </div>
+    
+    <% if content_for? :container %>
+      <%= yield :container %>
+    <% else %>
+      <div class="container-narrow">
+        <div class="masthead">
+          <%= render partial: 'layouts/navbar' %>
+          <h3 class="muted"><%= t("site_name") %></h3>
+        </div>
 
-      <%= notice_message %>
+        <%= notice_message %>
 
-      <hr>
+        <hr>
 
-      <%= yield %>
+        <%= yield %>
 
-      <hr>
+        <hr>
 
-      <div class="footer">
-        <p>&copy; <%= link_to "tonytonyjan", "http://tonytonyjan.github.com", target: "_blank" %> 2012</p>
-      </div>
-    </div> <!-- /container -->
+        <div class="footer">
+          <p>&copy; <%= link_to "tonytonyjan", "http://tonytonyjan.github.com", target: "_blank" %> 2012</p>
+        </div>
+      </div> <!-- /container -->
+    <% end %>
     <%= yield :body %>
     <%= render partial: 'layouts/google_plus_api' %>
     <%= render partial: 'layouts/facebook_api' %>

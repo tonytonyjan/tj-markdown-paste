@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def show
     @title = @post.title
     @meta = {description: @post.content}
-    render layout: "clean"
+    render layout: "post"
   end
 
   def new
