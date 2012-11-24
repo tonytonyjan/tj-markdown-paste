@@ -11,9 +11,9 @@ end
 
 group :production do
   gem 'pg'
-  gem 'thin'
 end
 
+gem 'thin'
 gem "tj_rails_extension", :git => "git://github.com/tonytonyjan/tj_rails_extension.git"
 gem "devise"
 gem "cancan"
