@@ -15,8 +15,8 @@ class Post < ActiveRecord::Base
 
 ---
 
-1.  *italic*
-2.  **bold**
+1.  `*italic*`: *italic*
+2.  `**bold**`: **bold**
 
 ## Blockquotes
 
@@ -26,7 +26,7 @@ class Post < ActiveRecord::Base
 
 ## Code
 
-  #!/usr/bin/ruby
+    #!/usr/bin/ruby
     class Fixnum
       def prime?
         ('1' * self) !~ /^1?$|^(11+?)\1+$/
@@ -36,8 +36,6 @@ class Post < ActiveRecord::Base
 ## Tex
 
 $E=mc^2$
-
-`$E=mc^2$`
 ).strip
   end
 
