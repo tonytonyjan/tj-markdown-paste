@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post.content = Post::demo_content
     render layout: "editor"
   end
 end
