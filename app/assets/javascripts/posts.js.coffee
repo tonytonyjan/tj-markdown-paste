@@ -31,7 +31,6 @@ SITE.posts =
     editor = CodeMirror.fromTextArea(textArea,
       mode: "markdown",
       theme: "vibrant-ink",
-      lineWrapping: true,
       onChange: update_preview
     )
     update_preview()
