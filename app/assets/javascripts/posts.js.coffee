@@ -23,16 +23,18 @@ SITE.posts =
     textArea = document.getElementById("post_content")
     preview = $('#preview')
     converter = new Markdown.Converter()
+    update_preview = () ->
+      preview.html(converter.makeHtml(editor.getValue()))
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub])
+      preview.find('pre code').each (i, e) ->
+        hljs.highlightBlock(e)
     editor = CodeMirror.fromTextArea(textArea,
       mode: "markdown",
       theme: "vibrant-ink",
       lineWrapping: true,
-      onChange: () ->
-        preview.html(converter.makeHtml(editor.getValue()))
-        MathJax.Hub.Queue(["Typeset",MathJax.Hub])
-        preview.find('pre code').each (i, e) ->
-          hljs.highlightBlock(e)
+      onChange: update_preview
     )
+    update_preview()
   show_title: () ->
     title = $('#post_title')
     title_preview = $('#post_title_preview')    
