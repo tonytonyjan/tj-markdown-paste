@@ -3,6 +3,7 @@
 <%= simple_form_for(@post) do |f| %>
   <%= error_message f.object %>
     <div class="masthead">
+      <%= render partial: 'layouts/navbar' %>
       <div class="form-inputs">
         <%= f.input :title, label: false, placeholder: "Title" %>
         <%= f.input :show_title, label: false, inline_label: true %>
