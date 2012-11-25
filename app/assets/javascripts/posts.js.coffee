@@ -40,7 +40,7 @@ SITE.posts =
     title_preview = $('#post_title_preview')    
     show_title = $('#post_show_title')
     update_title = () ->
-      if show_title.attr("checked")
+      if show_title.attr("checked") && title.val() != ""
         title_preview.text(title.val())
         title_preview.css(display: "inherit")
       else
