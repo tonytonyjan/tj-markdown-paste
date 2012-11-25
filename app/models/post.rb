@@ -6,6 +6,9 @@ class Post < ActiveRecord::Base
   def self.demo_content
     %q(
 [reference link]: http://tonytonyjan.github.com "不歸錄" 
+[markdown]: http://daringfireball.net/projects/markdown/syntax "Markdown"
+
+Here are some basic markdown examples, please visit [Markdown official site][markdown] for more information.
 
 ## List
 
