@@ -14,20 +14,35 @@ en:
       header: Super Awesome Markdown Paste!
       lead: Markdown with mathematic syntax and automatic code highlight.
       try_it: Try It Right Now
+      coming_soon: Coming Soon
       features:
         code_hightlight:
           h: Automatic Code Highlight
           p: >
-            TJMarkdown can automatically highlights your codes in <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tag.
-          p_old: >
-            TJMarkdownPaste use <a href="http://softwaremaniacs.org/soft/highlight/en/">highlight.js</a> to automatically highlights your codes.
+            Automatically highlights your code in <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> tag.
         mathematic_syntax:
           h: Mathematic Syntax
           p: >
-            TJMarkdownPaste provides Tex mathematic syntax
+            Renders Tex mathematic syntax in dollar sign,
             so that you can easily express your formulas, etc.
-          p_old: >
-            TJMarkdownPaste use <a href="http://www.mathjax.org/">MathJax</a> to automatically render all Tex formula syntax.
+            Note that if there are dollar signs in your post,
+            try <code>\(</code> and <code>\)</code> alternatively.
+        gfm:
+          h: GitHub Flavored Markdown
+          p: >
+            Preserve newlines, multiple underscores in words
+            and autolink URL. For more information,
+            visit <a href="http://github.github.com/github-flavored-markdown/" target="_blank">GFM</a>.
+        real_time_editor:
+          h: Real-Time Editor
+          p: >
+            Preview the rendered result in real-time with our powerful editor.
+        sign_in_with_open_id:
+          h: Sign in with FB or Google
+          p: >
+            All anonymous post will be destroied in 1 week.
+            But you can keep and manage all your posts after you
+            sign in with Facebook or Google.
     about:
       blog: Blog
       email: Email
