@@ -8,9 +8,4 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound do |exception|
     redirect_to request.referer || root_url, :alert => exception.message
   end
-
-  def current_user
-    nil
-  end
-  helper_method :current_user
 end

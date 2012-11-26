@@ -23,10 +23,8 @@ en:
         mathematic_syntax:
           h: Mathematic Syntax
           p: >
-            Renders Tex mathematic syntax in dollar sign,
+            Renders Tex mathematic syntax in dollar signs
             so that you can easily express your formulas, etc.
-            Note that if there are dollar signs in your post,
-            try <code>\(</code> and <code>\)</code> alternatively.
         gfm:
           h: GitHub Flavored Markdown
           p: >
@@ -40,7 +38,7 @@ en:
         sign_in_with_open_id:
           h: Sign in with FB or Google
           p: >
-            All anonymous post will be destroied in 1 week.
+            All anonymous posts will be destroyed in 1 week.
             But you can keep and manage all your posts after you
             sign in with Facebook or Google.
     contact:
