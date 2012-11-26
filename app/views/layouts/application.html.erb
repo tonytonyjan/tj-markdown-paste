@@ -31,7 +31,7 @@
       <div class="container-narrow">
         <div class="masthead">
           <%= render partial: 'layouts/navbar' %>
-          <h3><%= link_to t("site_name"), root_url, class: "muted" %></h3>
+          <h3><%= image_tag "logo.png" %> <%= link_to t("site_name"), root_url, class: "muted" %></h3>
         </div>
 
         <%= notice_message %>
