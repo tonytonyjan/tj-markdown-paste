@@ -66,6 +66,7 @@ module MarkupPaste
 
     # Using devise on Heroku with Ruby on Rails 3.1 requires setting:
     config.assets.initialize_on_precompile = false
-    config.action_mailer.default_url_options = {host: "http://tj-markdown-paste.herokuapp.com"}
+
+    config.action_mailer.default_url_options = {host: "tj-markdown-paste.herokuapp.com"}
   end
 end
