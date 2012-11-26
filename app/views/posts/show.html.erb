@@ -11,6 +11,8 @@
     Powered by <%= link_to t("site_name"), root_url %>
     <% if can? :update, @post %>
       | <%= link_to t('tj.form.edit'), edit_post_path(@post) %>
+      | <%= link_to t('tj.form.destroy'), @post, method: :delete, confirm: 'Are you sure?' %>
+      | <%= link_to t('tj.form.back'), current_user %>
     <% end %>
   </p>
 </div>

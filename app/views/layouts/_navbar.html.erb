@@ -10,6 +10,7 @@
       </a>
       <ul class="dropdown-menu">
         <% if user_signed_in? %>
+          <%= nav_li t("navbar.my_page"), current_user %>
           <%= nav_li t("navbar.edit"), edit_user_registration_path %>
           <%= nav_li t("navbar.sign_out"), destroy_user_session_path, method: :delete %>
         <% else %>

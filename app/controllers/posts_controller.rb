@@ -19,4 +19,10 @@ class PostsController < ApplicationController
   def edit
     render layout: "editor"
   end
+
+  def destroy
+    @post.destroy
+    flash[:notice] = t("tj.destroy_successful")
+    redirect_to current_user || posts_path
+  end
 end
