@@ -1,6 +1,22 @@
 <ul class="nav nav-pills pull-right">
-  <%= nav_li t("navbar.home"), root_url %>
   <%= nav_li t("helpers.submit.create", :model => Post), new_post_path %>
   <%= nav_li t("navbar.about"), home_about_path %>
   <%= nav_li t("navbar.contact"), home_contact_path %>
+  <li>
+    <div class="btn-group">
+      <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
+        <%= user_signed_in? ? current_user.name.presence || current_user.email : t("navbar.account") %>
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <% if user_signed_in? %>
+          <%= nav_li t("navbar.edit"), edit_user_registration_path %>
+          <%= nav_li t("navbar.sign_out"), destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= nav_li t("navbar.sign_up"), new_user_registration_path %>
+          <%= nav_li t("navbar.sign_in"), new_user_session_path %>
+        <% end %>
+      </ul>
+    </div> 
+  </li>
 </ul>

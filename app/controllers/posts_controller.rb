@@ -8,7 +8,15 @@ class PostsController < ApplicationController
   end
 
   def new
-    # @post.content = t("demo_content")
+    render layout: "editor"
+  end
+
+  def create
+    @post = user_signed_in? ? current_user.posts.build(params[:post]) : Post.new(params[:post])
+    save_record! @post
+  end
+
+  def edit
     render layout: "editor"
   end
 end

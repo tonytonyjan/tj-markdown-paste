@@ -2,13 +2,18 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  site_name: TJMarkdownPaste (Beta)
+  site_name: TJMarkdownPaste
   preview: Preview
   navbar:
     home: Home
     about: About
     contact: Contact
     feedback: Feedback
+    sign_in: Sign In
+    sign_out: Sign Out
+    sign_up: Sign Up
+    edit: Edit
+    account: Account
   home:
     index:
       header: Super Awesome Markdown Paste!

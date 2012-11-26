@@ -1,4 +1,6 @@
 MarkupPaste::Application.routes.draw do
+  get "users/show"
+
   root :to => 'home#index'
   get "home/index"
   get "home/about"
@@ -6,6 +8,7 @@ MarkupPaste::Application.routes.draw do
   resources :posts
 
   devise_for :users
+  resources :users, only: [:show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
