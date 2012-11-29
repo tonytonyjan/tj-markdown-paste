@@ -1,1 +1,18 @@
-<%= debug @user %>
+<div class="row-fluid well">
+  <div class="span2">
+    <%= image_tag @user.gravatar_url %>
+  </div>
+  <div class="span10">
+    <h3><%= @user.name %></h3>
+  </div>
+</div>
+
+<% @posts.each do |post| %>
+  <div class="well">
+    <div class="page-header">
+      <h1><%= post.title %></h1>
+    </div>
+    <%= post.markup_content %>
+  </div>
+<% end %>
+<%= will_paginate @posts %>
