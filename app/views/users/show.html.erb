@@ -1,3 +1,4 @@
+<%= render 'posts/mathjax' %>
 <div class="well">
   <div class="row-fluid">
     <div class="span2">
@@ -10,10 +11,12 @@
 </div>
 
 <% @posts.each do |post| %>
-  <div class="page-header">
-    <h1><%= link_to post.title, post, class: "muted" %></h1>
+  <div class="well">
+    <%= content_tag :h1, post.title if post.show_title%>
+    <%= post.markup_content %>
+    <%= link_to t("show"), post %>
+    <%= render 'posts/manage_links', post: post %>
   </div>
-  <%= post.markup_content %>
-  <%= render 'posts/manage_links', post: post %>
+  
 <% end %>
 <%= will_paginate @posts %>
