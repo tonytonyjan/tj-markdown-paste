@@ -1,0 +1,2 @@
+<%= link_to t('tj.form.edit'), edit_post_path(post) if can? :update, post %>
+<%= link_to t('tj.form.destroy'), post, method: :delete, confirm: 'Are you sure?' if can? :destroy, post %>

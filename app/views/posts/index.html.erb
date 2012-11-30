@@ -8,8 +8,7 @@
       <tr>
         <th>Title</th>
         <th>Content</th>
-        <th></th>
-        <th></th>
+        <th>Action</th>
       </tr>
     </thead>
 
@@ -18,8 +17,7 @@
       <%= content_tag_for(:tr, @posts) do |post| %>
         <td><%= link_to post.title, post %></td>
         <td><%= post.content.truncate 70 %></td>
-        <td><%= link_to t('tj.form.edit'), edit_post_path(post), class: "btn btn-info btn-mini" %>
-        <%= link_to t('tj.form.destroy'), post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-mini" %></td>
+        <td><%= render 'posts/manage_links', post: post %></td>
       <% end %>
     </tbody>
   </table>

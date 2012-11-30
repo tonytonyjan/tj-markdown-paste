@@ -14,5 +14,6 @@
     <h1><%= link_to post.title, post, class: "muted" %></h1>
   </div>
   <%= post.markup_content %>
+  <%= render 'posts/manage_links', post: post %>
 <% end %>
 <%= will_paginate @posts %>

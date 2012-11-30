@@ -8,7 +8,9 @@ MarkupPaste::Application.routes.draw do
   resources :posts
 
   devise_for :users
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :posts, only: [:show]
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
