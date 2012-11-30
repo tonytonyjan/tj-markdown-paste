@@ -3,9 +3,7 @@
     <%= notice_message %>
     <%= yield %>
     <hr>
-    <div class="footer">
-      <p>Powered by <%= link_to t("site_name"), root_url %></p>
-    </div>
+    <%= render partial: "layouts/footer" %>
   </div> <!-- /container -->
 <% end %>
 

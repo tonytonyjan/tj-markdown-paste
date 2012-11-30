@@ -41,10 +41,7 @@
         <%= yield %>
 
         <hr>
-
-        <div class="footer">
-          <p>&copy; <%= link_to "tonytonyjan", "http://tonytonyjan.github.com", target: "_blank" %> 2012</p>
-        </div>
+        <%= render partial: "layouts/footer" %>
       </div> <!-- /container -->
     <% end %>
     <%= yield :body %>
