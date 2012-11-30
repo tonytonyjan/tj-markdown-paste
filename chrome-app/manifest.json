@@ -1,0 +1,16 @@
+{
+  "name": "TJMarkdownPaste",
+  "description": "Markdown publishing service with mathematical syntax and automatic code highlight.",
+  "version": "1.0",
+  "manifest_version": 2,
+  "icons": {
+    "16": "icon_16.png",
+    "48": "icon_48.png",
+    "128": "icon_48.png"
+  },
+  "app": {
+    "launch": {
+      "web_url": "http://tj-markdown-paste.herokuapp.com/posts/new"
+    }
+  }
+}
