@@ -31,7 +31,13 @@
       <div class="container-narrow">
         <div class="masthead">
           <%= render partial: 'layouts/navbar' %>
-          <h3><%= image_tag "logo.png" %> <%= link_to t("site_name"), root_url, class: "muted" %></h3>
+          <h3>
+            <%= image_tag "logo.png" %>
+            <%= link_to t("site_name"), root_url, class: "muted" %>
+            <%= link_to t("project_site_url"), target: :_blank do %>
+              <span class="label label-inverse"><%= t("join_us") %></span>
+            <% end %>
+          </h3>
         </div>
 
         <%= notice_message %>

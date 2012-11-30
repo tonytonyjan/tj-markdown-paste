@@ -1,3 +1,7 @@
 <div class="footer">
-  <p>Powered by <%= link_to t("site_name"), root_url %></p>
+  <p>
+    Powered by <%= link_to t("site_name"), root_url %>
+    |
+    <%= link_to t("footer.join_us"), t("project_site_url"), target: :_blank %>
+  </p>
 </div>
