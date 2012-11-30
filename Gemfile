@@ -13,7 +13,7 @@ group :production do
   gem 'pg'
 end
 
-gem 'thin'
+gem 'unicorn'
 gem "tj_rails_extension", :git => "git://github.com/tonytonyjan/tj_rails_extension.git"
 gem "devise"
 gem "cancan"
