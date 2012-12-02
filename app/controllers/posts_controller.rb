@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
   default_resource_actions
+
+  def index
+    @posts = Post.order("id DESC").paginate page: params[:page]
+  end
+
   def show
     @title = @post.title
     @meta = {description: @post.content}
