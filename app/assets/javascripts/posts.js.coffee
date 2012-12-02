@@ -32,8 +32,10 @@ SITE.posts =
       mode: "markdown",
       theme: "vibrant-ink",
       lineWrapping: true,
-      onChange: update_preview
+      onChange: update_preview,
+      extraKeys: {"Enter": "newlineAndIndentContinueMarkdownList"}
     )
+
     update_preview()
   show_title: () ->
     title = $('#post_title')
