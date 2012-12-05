@@ -23,11 +23,17 @@ SITE.posts =
     textArea = document.getElementById("post_content")
     preview = $('#preview')
     converter = new Markdown.Converter()
+    timestamp = 0
+    min_duration = 1000 # 1 second
     update_preview = () ->
-      preview.html(converter.makeHtml(editor.getValue()))
-      MathJax.Hub.Queue(["Typeset",MathJax.Hub])
-      preview.find('pre code').each (i, e) ->
-        hljs.highlightBlock(e)
+      timestamp = Date.now()
+      setTimeout () ->
+        return unless Date.now() - timestamp >= min_duration
+        preview.html(converter.makeHtml(editor.getValue()))
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub])
+        preview.find('pre code').each (i, e) ->
+          hljs.highlightBlock(e)
+      , min_duration
     editor = CodeMirror.fromTextArea(textArea,
       mode: "markdown",
       theme: "vibrant-ink",
