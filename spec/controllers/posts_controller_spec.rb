@@ -24,7 +24,7 @@ describe PostsController do
   # Post. As you add validations to Post, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "title" => "MyString" }
+    {title: "Title", content: "Content"}
   end
 
   # This should return the minimal set of values that should be in the session
@@ -110,8 +110,9 @@ describe PostsController do
         # specifies that the Post created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Post.any_instance.should_receive(:update_attributes).with({ "title" => "MyString" })
-        put :update, {:id => post.to_param, :post => { "title" => "MyString" }}, valid_session
+        Post.any_instance.should_receive(:assign_attributes).with({ "title" => "MyString", "content" => "MyText" })
+        Post.any_instance.should_receive(:save)
+        put :update, {:id => post.to_param, :post => { "title" => "MyString", "content" => "MyText" }}, valid_session
       end
 
       it "assigns the requested post as @post" do
