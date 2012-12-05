@@ -6,9 +6,9 @@ GIT
 
 GIT
   remote: git://github.com/tonytonyjan/tj_rails_extension.git
-  revision: ba281b33238b95e46ba14c0c8e616bf110f1f672
+  revision: 9e50876b407be60f5abd7356906d1a85338ac51d
   specs:
-    tj_rails_extension (0.0.5)
+    tj_rails_extension (0.0.6)
       rails (~> 3.2.8)
 
 GEM
