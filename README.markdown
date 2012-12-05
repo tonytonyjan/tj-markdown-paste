@@ -1,5 +1,13 @@
 ## About
 
+[site]: http://tj-markdown-paste.herokuapp.com
+[group]: https://groups.google.com/forum/?fromgroups#!forum/tj-markdown-paste
+[project site]: https://github.com/tonytonyjan/tj-markdown-paste
+
+*   [TJMarkdownPaste][site]
+*   [Google Group][group]
+*   [Github][project site]
+
 Markdown with mathematical syntax and automatic code highlight posting service.
 
 We aim to build a blogging service that belongs to we engineers and mathematician. It's a leisure project after my work, so there is no explicit schedule or plan. Feel free to join us if your are interested in our project, then we can work together and discuss about the future of TJMarkdownPaste in the future together. =)
