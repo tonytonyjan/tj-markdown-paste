@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
+  layout "editor", only: [:new, :create, :edit, :update]
 
   def index
     @posts = Post.order("id DESC").paginate page: params[:page]
@@ -12,7 +13,6 @@ class PostsController < ApplicationController
   end
 
   def new
-    render layout: "editor"
   end
 
   def create
@@ -21,7 +21,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    render layout: "editor"
   end
 
   def update
