@@ -12,6 +12,7 @@ describe "posts/index" do
         :content => "MyText"
       )
     ])
+    view.stub(:will_paginate)
   end
 
   it "renders a list of posts" do
