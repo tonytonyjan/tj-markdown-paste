@@ -33,7 +33,8 @@ SITE.posts =
       theme: "vibrant-ink",
       lineWrapping: true,
       onChange: update_preview,
-      extraKeys: {"Enter": "newlineAndIndentContinueMarkdownList"}
+      extraKeys: {"Enter": "newlineAndIndentContinueMarkdownList"},
+      autofocus: true
     )
 
     update_preview()
