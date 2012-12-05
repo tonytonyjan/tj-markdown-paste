@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
-  default_resource_actions
 
   def index
     @posts = Post.order("id DESC").paginate page: params[:page]
@@ -23,6 +22,15 @@ class PostsController < ApplicationController
 
   def edit
     render layout: "editor"
+  end
+
+  def update
+    if @post.update_attributes params[:post]
+      flash[:notice] = t("tj.succeeded")
+      redirect_to @post
+    else
+      render "edit"
+    end
   end
 
   def destroy
