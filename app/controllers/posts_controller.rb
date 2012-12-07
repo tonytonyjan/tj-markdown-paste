@@ -3,38 +3,58 @@ class PostsController < ApplicationController
   layout "editor", only: [:new, :create, :edit, :update]
 
   def index
-    @posts = Post.order("id DESC").paginate page: params[:page]
+    @posts = Post.paginate(page: params[:page], order: 'id DESC')
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
+    end
   end
 
   def show
-    @title = @post.title
-    @meta = {description: @post.content}
-    render layout: "post"
+    respond_to do |format|
+      format.html
+      format.json { render json: @post }
+    end
   end
 
   def new
+    respond_to do |format|
+      format.html
+      format.json { render json: @post }
+    end
   end
 
   def create
-    @post = user_signed_in? ? current_user.posts.build(params[:post]) : Post.new(params[:post])
-    save_record! @post
-  end
-
-  def edit
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post, notice: t('tj.succeeded') }
+        format.json { render json: @post, status: :created, location: @post }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update
-    if @post.update_attributes params[:post]
-      flash[:notice] = t("tj.succeeded")
-      redirect_to @post
-    else
-      render "edit"
+    respond_to do |format|
+      if @post.update_attributes(params[:post])
+        format.html { redirect_to @post, notice: t('tj.succeeded') }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def destroy
     @post.destroy
-    flash[:notice] = t("tj.succeeded")
-    redirect_to current_user || posts_path
+
+    respond_to do |format|
+      format.html { redirect_to current_user || posts_url, notice: t('tj.succeeded') }
+      format.json { head :no_content }
+    end
   end
 end

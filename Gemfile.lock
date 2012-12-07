@@ -6,9 +6,9 @@ GIT
 
 GIT
   remote: git://github.com/tonytonyjan/tj_rails_extension.git
-  revision: 9e50876b407be60f5abd7356906d1a85338ac51d
+  revision: 3d3df514a0dd6da8d006ab66b3a875ae18a47d2d
   specs:
-    tj_rails_extension (0.0.6)
+    tj_rails_extension (0.0.8)
       rails (~> 3.2.8)
 
 GEM
@@ -82,7 +82,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.19)
     multi_json (1.4.0)
-    newrelic_rpm (3.5.3.24)
+    newrelic_rpm (3.5.3.25)
     orm_adapter (0.4.0)
     pg (0.14.1)
     pg (0.14.1-x86-mingw32)

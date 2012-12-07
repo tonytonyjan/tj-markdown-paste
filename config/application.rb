@@ -11,6 +11,10 @@ end
 
 module MarkupPaste
   class Application < Rails::Application
+          config.generators do |g|
+            g.stylesheets false
+          end
+
     config.generators do |g|
       g.stylesheets false
     end
