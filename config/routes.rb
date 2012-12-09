@@ -7,7 +7,7 @@ MarkupPaste::Application.routes.draw do
   get "home/contact"
   resources :posts
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users, only: [:show] do
     resources :posts, only: [:show]
   end

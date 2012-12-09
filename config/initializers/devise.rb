@@ -1,6 +1,10 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+  # dirty solution for "hostname does not match the server certificate" error
+  if Rails.env.development? 
+      OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE 
+  end
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
@@ -206,6 +210,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
+  config.omniauth :facebook, Setting.facebook_token, Setting.facebook_secret
+  config.omniauth :twitter, Setting.twitter_token, Setting.twitter_secret
+  config.omniauth :github, Setting.github_token, Setting.github_secret
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

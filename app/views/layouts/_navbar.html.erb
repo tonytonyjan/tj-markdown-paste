@@ -16,6 +16,9 @@
         <% else %>
           <%= nav_li t("navbar.sign_up"), new_user_registration_path %>
           <%= nav_li t("navbar.sign_in"), new_user_session_path %>
+          <% Setting.providers.each do |provider| %>
+            <%= nav_li t("navbar.sign_in_with_#{provider}"), user_omniauth_authorize_path(provider) %>
+          <% end %>
         <% end %>
       </ul>
     </div> 

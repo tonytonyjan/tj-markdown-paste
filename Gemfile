@@ -25,6 +25,12 @@ gem "nested_form", :github => "ryanb/nested_form"
 gem "will_paginate"
 gem "rdiscount"
 gem "rails-i18n"
+gem "omniauth"
+gem "omniauth-facebook"
+gem "omniauth-twitter"
+gem "omniauth-github"
+gem "omniauth-google"
+gem "settingslogic"
 
 # Gems used only for assets and not required
 # in production environments by default.

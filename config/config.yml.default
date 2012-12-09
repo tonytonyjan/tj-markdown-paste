@@ -1,0 +1,17 @@
+defaults: &defaults
+  twitter_token: "JsSno1iR1BLMS8t1oO9g"
+  twitter_secret: "W7u1rIAxkJm6XXlHP6dq5MRGPEhazafLQqWtHBOc"
+  facebook_token: "317736408339264"
+  facebook_secret: "f401924d9b8bf4edb375fd255b7d9621"
+  github_token: "133fc82ef3de786a9f59"
+  github_secret: "96997d64506e3088eedbe68e55438fa1443cf191"
+  providers: ["twitter", "facebook", "github"]
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
