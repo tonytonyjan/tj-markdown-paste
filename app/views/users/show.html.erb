@@ -8,9 +8,6 @@
       <h3><%= @user.name %></h3>
     </div>
   </div>
-  <% @user.can_bind_to.each do |provider| %>
-    <%= link_to t("bind_to_#{provider}"), user_omniauth_authorize_path(provider) %>
-  <% end %>
 </div>
 
 <% @posts.each do |post| %>
