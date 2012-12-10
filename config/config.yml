@@ -1,0 +1,20 @@
+development: &dev
+  twitter_token: "JsSno1iR1BLMS8t1oO9g"
+  twitter_secret: "W7u1rIAxkJm6XXlHP6dq5MRGPEhazafLQqWtHBOc"
+  facebook_token: "138496429541996"
+  facebook_secret: "b286609c5333f9cbe882747392c6813b"
+  github_token: "21c2c825558eeb2f48a8"
+  github_secret: "9ffa9a49c9a84c5abf1b35927549c23f246b7248  "
+  providers: ["twitter", "facebook", "github"]
+
+test:
+  <<: *dev
+
+production:
+  twitter_token: "fpzrHnXtZUGNlTLna2RRYQ"
+  twitter_secret: "qeWCxZFNRs7rSMJtXaTAYnblzPE23PXG92IFTvjem0"
+  facebook_token: "505155686176330"
+  facebook_secret: "6eb62643e114858409fe325b82647b58"
+  github_token: "61a5a15c1b4672214ac4"
+  github_secret: "465268216c7230b7b5d51d64ecab6ae3a40564df"
+  providers: ["twitter", "facebook", "github"]
