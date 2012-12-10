@@ -20,4 +20,12 @@
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
 
+<% if @user.can_bind_to.present? %>
+  <h3>Bind with Social Network</h3>
+
+  <% @user.can_bind_to.each do |provider| %>
+    <%= link_to t("bind_to_#{provider}"), user_omniauth_authorize_path(provider) %>
+  <% end %>
+<% end %>
+
 <%= link_to "Back", :back %>
