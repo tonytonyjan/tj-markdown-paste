@@ -11,12 +11,15 @@ en:
     about: About
     contact: Contact
     feedback: Feedback
-    sign_in: Sign In
-    sign_out: Sign Out
-    sign_up: Sign Up
+    sign_in: Sign in
+    sign_out: Sign out
+    sign_up: Sign up
     my_page: My Page
     edit: Edit
     account: Account
+    sign_in_with_facebook: Sign in with Facebook
+    sign_in_with_github: Sign in with Github
+    sign_in_with_twitter: Sign in with Twitter
   home:
     index:
       header: Super Awesome Markdown Paste!
