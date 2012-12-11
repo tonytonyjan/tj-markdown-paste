@@ -47,11 +47,11 @@ en:
           p: >
             Preview the rendered result in real-time with our powerful editor.
         sign_in_with_open_id:
-          h: Sign in with FB or Google
+          h: Sign in with Open ID
           p: >
             All anonymous posts will be destroyed in 1 week.
             But you can keep and manage all your posts after you
-            sign in with Facebook or Google.
+            sign in with Facebook, Twitter or Github.
     contact:
       blog: Blog
       email: Email
