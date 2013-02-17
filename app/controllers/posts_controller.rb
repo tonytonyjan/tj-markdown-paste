@@ -13,7 +13,7 @@ class PostsController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html
+      format.html { render layout: 'post' }
       format.json { render json: @post }
     end
   end

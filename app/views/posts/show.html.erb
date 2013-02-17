@@ -1,9 +1,1 @@
-<%= render 'mathjax' %>
-<% if @post.show_title %>
-  <h1><%= @post.title %></h1>
-<% end %>
 <%= @post.markup_content %>
-<%= render 'manage_links', post: @post %>
-<hr>
-<%= render 'share/share_btns' %>
-<%= render "share/disqus" %>

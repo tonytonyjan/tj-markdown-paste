@@ -1,7 +1,24 @@
+<%= render 'mathjax' %>
 <% content_for :container do %>
-  <div class="container-narrow">
+  <div class="container-fluid">
     <%= notice_message %>
-    <%= yield %>
+    <div class="row-fluid">
+      <div class="span6 offset3">
+        <% if @post.show_title %>
+          <h1><%= @post.title %></h1>
+        <% end %>
+        <%= yield %>
+        <% if user = @post.user.presence %>
+          by <%= link_to user.name, user %><br>
+        <% end %>
+        <%= render 'manage_links', post: @post %>
+        <hr>
+        <%= render 'share/share_btns' %>
+        <%= render "share/disqus" %>
+        <hr>
+        <%= render partial: "layouts/footer" %>
+      </div>
+    </div>
   </div> <!-- /container -->
 <% end %>
 
