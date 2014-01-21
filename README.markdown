@@ -1,3 +1,7 @@
+# Warning
+
+A similar project [Lagdown](https://github.com/tonytonyjan/lagdown) is going to replace this project, and I will no longeer commit on this project, sorry for that. And I hope you like the new one.
+
 ## About
 
 [site]: http://tj-markdown-paste.herokuapp.com
